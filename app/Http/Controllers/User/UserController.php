@@ -53,6 +53,7 @@ if(Auth::guard('web')->attempt($creds) ){
 function logout(){
   Auth::guard('web')->logout();
   return redirect('/');
+
 }
     
 

@@ -30,39 +30,61 @@
 					<img src="{{asset('doctorlogin/images/Tosca Blue Online Doctor Consultation Instagram Post.png')}}" alt="IMG">
 				</div>
 
-				<form class="login100-form validate-form">
+				<form action="{{route('doctor.create')}}" method="post"  class="login100-form validate-form">
 					<span class="login100-form-title">
-						Member Login
+						Doctor  Register Form
 					</span>
+					@csrf
+			@if(Session::get('success'))
+			<span class="text-success">{{Session::get('success')}} @endif</span>
+				
+			@if(Session::get('fail'))
+			<span class="text-success">{{Session::get('fail')}} @endif</span>
+
 
 					<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
-						<input class="input100" type="text" name="name" placeholder="Doctor Name">
+						<input class="input100" type="text" name="name" placeholder="Doctor Name" value="{{old('name')}}">
 						<span class="focus-input100"></span>
 						<span class="symbol-input100">
 						
 						</span>
+						<span class="text-danger ">@error('name'){{$message}} @enderror</span>
 					</div>
 				
+				
 					<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
-						<input class="input100" type="text" name="hospital" placeholder="enter the hospital name">
+						<input class="input100" type="text" name="hospital" placeholder="enter the hospital name" value="{{old('hospital')}}" >
 						<span class="focus-input100"></span>
 						<span class="symbol-input100">
 					
 						</span>
+						<span class="text-danger">@error('hospital'){{$message}} @enderror	</span>
 					</div>
+
 					<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
-						<input class="input100" type="email" name="email" placeholder=" entre the Email ">
+						<input class="input100" type="email" name="email" placeholder=" entre the Email " value="{{old('email')}}">
 						<span class="focus-input100"></span>
 						<span class="symbol-input100">
 							
 						</span>
+
+						<span class="text-danger">@error('email'){{$message}}@enderror</span>
 					</div>
 					<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
-						<input class="input100" type="text" name="password" placeholder="password">
+						<input class="input100" type="tel" name="phone" placeholder=" entre the phone " value="{{old('phone')}}">
+						<span class="focus-input100"></span>
+						<span class="symbol-input100">
+							
+						</span>
+						<span class="text-danger">@error('phone'){{$message}}@enderror</span>
+					</div>
+					<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
+						<input class="input100" type="password" name="password" placeholder="password" value="{{old('password')}}">
 						<span class="focus-input100"></span>
 						<span class="symbol-input100">
 						
 						</span>
+						<span class="text-danger">@error('password'){{$message}} @enderror</span>
 					</div>
 
 					<div class="wrap-input100 validate-input" data-validate = "Password is required">
@@ -71,12 +93,15 @@
 						<span class="symbol-input100">
 		
 						</span>
+						<span class="text-danger">@error('cpassword'){{$message}} @enderror</span>
 					</div>
 					
 					<div class="container-login100-form-btn">
 						<button type="submit " name="submit" class="login100-form-btn">
 							Login
 						</button>
+
+						
 					</div>
 
 					<div class="text-center p-t-12">

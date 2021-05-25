@@ -30,26 +30,31 @@
 					<img src="{{asset('doctorlogin/images/Tosca Blue Online Doctor Consultation Instagram Post.png')}}" alt="IMG">
 				</div>
 
-				<form class="login100-form validate-form">
+				<form action="{{route('doctor.check')}}" method="post" class="login100-form validate-form">
 					<span class="login100-form-title">
-						Member Login
+						Doctor Login
 					</span>
 
 					<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
-						<input class="input100" type="text" name="email" placeholder="Email">
+						<input class="input100" type="email" name="email" placeholder="Email" value="{{old('email')}}">
 						<span class="focus-input100"></span>
+						@csrf
 						<span class="symbol-input100">
 							<i class="fa fa-envelope" aria-hidden="true"></i>
 						</span>
+
 					</div>
+						<span class="text-danger">@error('email'){{$message}} @enderror</span>
 
 					<div class="wrap-input100 validate-input" data-validate = "Password is required">
-						<input class="input100" type="password" name="pass" placeholder="Password">
+						<input class="input100" type="password" name="password" placeholder="Password" value="{{old('password')}}">
 						<span class="focus-input100"></span>
 						<span class="symbol-input100">
 							<i class="fa fa-lock" aria-hidden="true"></i>
 						</span>
+
 					</div>
+						<span class="text-danger">@error('password'){{$message}} @enderror</span>
 					
 					<div class="container-login100-form-btn">
 						<button class="login100-form-btn">
@@ -58,12 +63,14 @@
 					</div>
 
 					<div class="text-center p-t-12">
-						<span class="txt1">
-							Forgot
+						
+					
+						<span class="text-danger">
+							
+						@if(Session::get('fail'))
+						{{Session::get('fail')}} @endif
 						</span>
-						<a class="txt2" href="#">
-							Username / Password?
-						</a>
+						
 					</div>
 
 					<div class="text-center p-t-136">
