@@ -4,6 +4,6 @@
 @section('content')
 <h3>admin</h3>
 
-  
+
      
         @endsection

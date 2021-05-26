@@ -33,5 +33,3 @@
           </div>
         </div>
       </footer>
-      <div class="ps-scrollbar-x-rail" style="left: 0px; bottom: -761.6px;"><div class="ps-scrollbar-x" tabindex="0" style="left: 0px; width: 0px;"></div></div>
-        <div class="ps-scrollbar-y-rail" style="top: 761.6px; right: 0px; height: 408px;"><div class="ps-scrollbar-y" tabindex="0" style="top: 265px; height: 142px;"></div></div>

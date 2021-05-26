@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    @extends('dashboard.admin.layout.css')
-    <title>Dashboard</title>
+    @include('dashboard.admin.layout.css')
+    <title> Admin Dashboard</title>
 </head>
 <body>
 
@@ -33,27 +33,11 @@
         </div></div></div>
 
         @include('dashboard.admin.layout.footer')
-    
+        <div class="ps-scrollbar-x-rail" style="left: 0px; bottom: -761.6px;"><div class="ps-scrollbar-x" tabindex="0" style="left: 0px; width: 0px;"></div></div>
+        <div class="ps-scrollbar-y-rail" style="top: 761.6px; right: 0px; height: 408px;"><div class="ps-scrollbar-y" tabindex="0" style="top: 265px; height: 142px;"></div></div>
       </div>
 </div>
 
-
-    
-    <!-- <div class="content">
-        <div class="container-fluid">
-          <div class="row">
-
-          <main class="py-4">
-            @yield('content')
-        </main>
-          </div></div></div> -->
-
-<!-- <main class="py-4">
-            @yield('content')
-        </main> -->
-
-
-     
-        @extends('dashboard.admin.layout.js')
 </body>
+@include('dashboard.admin.layout.js')
 </html>

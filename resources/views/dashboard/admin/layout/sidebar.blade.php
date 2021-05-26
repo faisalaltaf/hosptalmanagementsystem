@@ -9,16 +9,16 @@
         </a></div>
       <div class="sidebar-wrapper ps-container ps-theme-default" data-ps-id="d26ff36c-fe13-ce9a-5380-f82a784e4827">
         <ul class="nav">
-          <li class="nav-item active  ">
-            <a class="nav-link" href="./dashboard.html">
+          <li class="nav-item">
+            <a class="nav-link" href="{{route('admin.home')}}">
               <i class="material-icons">dashboard</i>
               <p>Dashboard</p>
             </a>
           </li>
           <li class="nav-item ">
-            <a class="nav-link" href="./user.html">
+            <a class="nav-link" href="{{route('admin.profile')}}">
               <i class="material-icons">person</i>
-              <p>Admin Profile</p>
+              <p>Admi Profile</p>
             </a>
           </li>
           <li class="nav-item ">

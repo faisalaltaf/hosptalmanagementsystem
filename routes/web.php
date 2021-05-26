@@ -59,6 +59,8 @@ Route::prefix('admin')->name('admin.')->group(function(){
 Route::middleware(['auth:admin' ,'PreventBackHistory'])->group(function(){
 Route::view('/home','dashboard.admin.home')->name('home');
 Route::post('/logut',[AdminController::class,'logout'])->name('logout');
+Route::view('/profile','dashboard.admin.profile')->name('profile');
+
 });
 });
 
@@ -70,6 +72,7 @@ Route::post('/logut',[AdminController::class,'logout'])->name('logout');
     Route::view('/register','dashboard.doctor.register')->name('register');
     Route::post('/create',[DoctorController::class,'create'])->name('create');
     Route::post('/check',[DoctorController::class,'check'])->name('check');
+    
 
     });
     Route::middleware(['auth:doctor' ,'PreventBackHistory'])->group(function(){
