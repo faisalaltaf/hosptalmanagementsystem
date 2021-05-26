@@ -2,7 +2,7 @@
 
 
 @section('content')
-<p>{{Auth::guard('doctor')->user()->email}}</p>
+<p>{{Auth::guard('doctor')->user()->hospital}}</p>
 <div class="row">
           <div class="col-12">
             <div class="card card-chart">

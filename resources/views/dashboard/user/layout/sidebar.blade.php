@@ -5,13 +5,13 @@
       <div class="sidebar-wrapper ps ">
         <div class="logo px-4">
           
-          <a href="{{route('doctor.profile')}} " class="simple-text logo-normal">
-           Dr. {{Auth::guard()->user()->name}}
+          <a href="{{route('user.profile')}} " class="simple-text logo-normal">
+            {{Auth::guard()->user()->name}}
           </a>
         </div>
         <ul class="nav">
           <li class="active ">
-            <a href="{{route('doctor.home')}}">
+            <a href="{{route('user.home')}}">
               <i class="tim-icons icon-chart-pie-36"></i>
               <p>Dashboard</p>
             </a>
@@ -53,10 +53,10 @@
             </a>
           </li>
           <li>
-            <a href="{{route('doctor.logout')}}" onclick="event.preventDefault();document.getElementById('logout-form').submit(); ">
+            <a href="{{route('user.logout')}}" onclick="event.preventDefault();document.getElementById('logout-form').submit(); ">
               <i class="tim-icons icon-world"></i>
               <p>Logout</p>
-              <form action="{{route('doctor.logout')}}" method="post" id="logout-form">
+              <form action="{{route('user.logout')}}" method="post" id="logout-form">
     @csrf</form>
             </a>
           </li>

@@ -41,6 +41,7 @@ Route::middleware(['auth:web','PreventBackHistory'])->group(function(){
     
     Route::view('/home','dashboard.user.home')->name('home');
 Route::post('/logout',[UserController::class,'logout'])->name('logout');
+Route::view('/profile','dashboard.user.profile')->name('profile');
   
 });
 
@@ -78,5 +79,7 @@ Route::view('/profile','dashboard.admin.profile')->name('profile');
     Route::middleware(['auth:doctor' ,'PreventBackHistory'])->group(function(){
     Route::view('/home','dashboard.doctor.home')->name('home');
     Route::post('logout',[DoctorController::class,'logout'])->name('logout');
+Route::view('/profile','dashboard.doctor.profile')->name('profile');
+
     });
     });
